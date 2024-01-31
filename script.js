@@ -20,7 +20,7 @@ function validatePassword() {
     // Display appropriate message in popup
     if (isValid) {
         // alert("Password is valid. Redirecting to another link...");
-        window.location.href = '/Success'
+        window.location.href = 'Success'
         
         // Add code to redirect to another link after validation
         // Example: window.location.href = 'https://example.com';
