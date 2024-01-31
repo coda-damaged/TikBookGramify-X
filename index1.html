@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Validation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        #passwordInput {
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        #UserInput {
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        #submitButton {
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Password Validation</h1>
+    <form id="">
+        <label for="passwordInput">Username</label>
+        <input type="Username" id="UserInput" required>
+        
+    </form>
+
+    <form id="passwordForm">
+        <label for="passwordInput">Password:</label>
+        <input type="password" id="passwordInput" required>
+        <br>
+        <button type="button" id="submitButton" onclick="validatePassword()">Submit</button>
+    </form>
+
+    <script>
+        function validatePassword() {
+            var password = document.getElementById('passwordInput').value;
+
+            // Regular expressions for password requirements
+            var uppercaseRegex = /[A-Z]/;
+            var lowercaseRegex = /[a-z]/;
+            var digitRegex = /\d/;
+            var specialCharRegex = /[!@#$%^&*(),.?":{}|<>]/;
+            var invalidPasswordRegex = /password/i;
+
+            // Check password against requirements
+            var isValid = (
+                uppercaseRegex.test(password) &&
+                lowercaseRegex.test(password) &&
+                digitRegex.test(password) &&
+                specialCharRegex.test(password) &&
+                !invalidPasswordRegex.test(password)
+            );
+
+            // Display appropriate message in popup
+            if (isValid) {
+                // alert("Password is valid. Redirecting to another link...");
+                window.location.href = 'https://google.com'
+                
+                // Add code to redirect to another link after validation
+                // Example: window.location.href = 'https://example.com';
+            } else {
+                alert("Password is missing a requirement. Please check and try again.         (Also your password can't be password nerd)");
+            }
+        }
+    </script>
+
+</body>
+</html>
